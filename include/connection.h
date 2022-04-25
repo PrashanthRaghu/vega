@@ -1,0 +1,7 @@
+
+
+struct vega_connection {
+
+
+
+}
