@@ -1,3 +1,5 @@
 # Vega
 
-An event driven application server for high scalability, inbuilt application cache, TLS support, logging and application metrics. 
+An event driven application server for high scalability, application cache using plugins for ( Redis, Memcached, Hazelcast or in memory), TLS Termination, request logging and application metrics. 
+
+Deployment ready for production workloads on kubernetes. 
