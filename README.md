@@ -7,3 +7,8 @@ Deployment ready for production workloads on kubernetes.
 
 
 # Written in Bharath but will run for the world. 
+
+
+# Credits
+
+Growing with the Blessings of my Parents ( Sri. S Raghu and Smt. S Anuradha ), Gurus ( Sri S Venkates and Sri HS Venugopal ), Grandparents Elders and wellwishers. 
