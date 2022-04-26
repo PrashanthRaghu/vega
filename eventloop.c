@@ -1,9 +1,9 @@
 
 /*
 
-
- Authors: Prashanth Raghu
+  Authors: Prashanth Raghu
 */
+
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>
@@ -33,5 +33,4 @@ void eventloop_init() {
   #else
       me->base = event_init();
   #endif
-
 }

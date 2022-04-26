@@ -1,19 +1,17 @@
 
 
-enum vega_protocol {
-  HTTP,
-  XMPP,
-  WEBSOCKET,
-  ADMIN
-};
-
 struct vega_port_manager {
   int identifier;
   int port;
   vega_protocol protocol;
 };
 
-struct vega_settings {
+struct vega_server {
+  
+
+}
+
+struct vega_server_settings {
     size_t maxbytes;
     int maxconns;
     vega_port_manager* ports;
@@ -72,23 +70,7 @@ struct vega_settings {
     bool watch_enabled; /* allows watch commands to be dropped */
     bool relaxed_privileges;   /* Relax process restrictions when running testapp */
     bool meta_response_old; /* use "OK" instead of "HD". for response code TEMPORARY! */
-#ifdef EXTSTORE
-    unsigned int ext_io_threadcount; /* number of IO threads to run. */
-    unsigned int ext_page_size; /* size in megabytes of storage pages. */
-    unsigned int ext_item_size; /* minimum size of items to store externally */
-    unsigned int ext_item_age; /* max age of tail item before storing ext. */
-    unsigned int ext_low_ttl; /* remaining TTL below this uses own pages */
-    unsigned int ext_recache_rate; /* counter++ % recache_rate == 0 > recache */
-    unsigned int ext_wbuf_size; /* read only note for the engine */
-    unsigned int ext_compact_under; /* when fewer than this many pages, compact */
-    unsigned int ext_drop_under; /* when fewer than this many pages, drop COLD items */
-    unsigned int ext_max_sleep; /* maximum sleep time for extstore bg threads, in us */
-    double ext_max_frag; /* ideal maximum page fragmentation */
-    double slab_automove_freeratio; /* % of memory to hold free as buffer */
-    bool ext_drop_unread; /* skip unread items during compaction */
-    /* per-slab-class free chunk limit */
-    unsigned int ext_free_memchunks[MAX_NUMBER_OF_SLAB_CLASSES];
-#endif
+
 #ifdef TLS
     bool ssl_enabled; /* indicates whether SSL is enabled */
     SSL_CTX *ssl_ctx; /* holds the SSL server context which has the server certificate */
