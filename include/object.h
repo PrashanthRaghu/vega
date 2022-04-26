@@ -1,13 +1,18 @@
 
 
+#include "vega_types.h"
 #include "type.h"
 
-struct vega_base_object {
-  vega_type* type;
-  uint32_t refcount;
-};
+namespace vega {
 
-
-#define VEGA_INCREF(vega_base_object* obj) obj->refcount++;
-
-#define VEGA_DECREF(vega_base_object* obj)
+  class vega_base_object {
+    private:
+      vega_type* type;
+      uint32_t refcount;
+      vega_base_object *prev;
+      vega_base_object *next;
+    public:
+      void incref();
+      void decref();
+  };
+}

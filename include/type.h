@@ -1,12 +1,12 @@
 
 
+#include "vega_types.h"
+#include "object.h"
 
-struct vega_type {
+class vega_type {
   char* name;
   char* documentation;
 
-  union operations {
-
-  };
-
+  void (dealloc*)(vega_base_object* object);
+  vega_base_object* (alloc*)();
 };

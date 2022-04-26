@@ -1,40 +1,39 @@
 
 
 #include "vega_types.h"
+##include "object.h"
 
-typedef uint32_t blocksize;
+namespace vega {
 
-struct vega_arena {
-  void* memory_chunk; /**  Memory block **/
-  struct vega_arena* next; /** Linked list of arenas **/
-};
+  namespace memmanager {
 
-struct vega_pool {
-  blocksize size;
-  uint32_t alloc_count;
+    class VegaArena {
+      private:
+        void* memory_chunk; /**  Memory block **/
+        VegaArena* next; /** Linked list of arenas **/
+    };
 
-  struct vega_arena* belongs_to;
-};
-
-struct vega_mem_manager {
-  void* (alloc_function*)();
-  void* (dealloc_function*)();
-};
-
-vega_mem_manager vega_raw_mem_manager = {
-  raw_memory_alloc,
-  raw_memory_dealloc
-};
+    class VegaPool {
+      private:
+        size_t size;
+        uint32_t alloc_count;  /** Number of allocated objects **/
+        VegaArena* belongs_to; /** The arena the pool  belongs to **/
+    };
 
 
-vega_mem_manager vega_obj_manager = {
+    /** Inspired from Python Memory Manger **/
 
+    class VegaMemManager {
+
+      public:
+        void* alloc_function(size_t size);
+        void* calloc_function(size_t size);
+        void  dealloc_function(void* block);
+    };
+
+    class RawMemManager: public VegaMemManager
+
+    class ObjectMemManager: public vega_mem_manager
+
+ }
 }
-
-void* raw_memory_alloc();
-
-void* raw_memory_dealloc();
-
-void* raw_memory_alloc();
-
-void* raw_memory_dealloc();

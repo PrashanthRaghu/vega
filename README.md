@@ -1,6 +1,5 @@
 # Vega ( Speed in Kannada )
 
-
 An event driven application server for high scalability, application cache using plugins for ( Redis, Memcached, Hazelcast or in memory), TLS Termination, request logging and application metrics.
 
 Designed to be an Active Ingress Controller to be deployment ready for production workloads on Kubernetes as a multi functional API Gateway.
@@ -17,8 +16,12 @@ Vega's source code has been largely inspired from the design of the following op
 4. Lua
 5. THttpd
 6. Varnish Cache
+7. NodeJS
+8. Redis
 
 Thanks to all the authors of the open source libraries Vega uses such as libevent, Maintainers of the C standard libraries and never to forget Dennis Ritchie a large part of my life professionally has been due to the basis that has been created by your generous work.
+
+Teachers who have taught programming to me personally Uma Maheshwari Madam, Archana Madam, D Krupesh Sir and many teachers who have selflessly taught programming for our development.
 
 # Written in Bharath but will run for the world.
 
